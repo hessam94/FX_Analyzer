@@ -1,0 +1,31 @@
+public class Main
+{
+
+	public static int f(int x)
+	{
+		x = 7 * x + 7;
+		return x;
+	}
+
+
+	public static void main(String argv[])
+	{
+
+		int k, i , j,y;
+		while (j != i)
+			{
+				j=j+k;
+                k=k+1;
+                j=j-k;
+                y=f(y);
+			}
+		j = i +6;
+		k = i - j;
+
+
+
+
+
+	}
+
+}
