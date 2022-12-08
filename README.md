@@ -7,4 +7,4 @@ Instruction to use the tool
 3- all other files must be located in same directory that you clone this project, such as your sourceTest.txt (the source code to be examined), three recognier file
 (OneRecList.txt ,TwoRecList.txt,ThreeRecList.txt), a mathematica library file (JLinkNativeLibrary.dll), the main FX program (javaparser-core.jar) 
 and the user interface program (FXUI.jar).  
-4- after running the FXUI.jar with this command " java -jar FXUI.jar " the UI program starts and you need to select the MathKernel.exe program. this program is installed in same location that you have mathematica installed.  
+4- after running the FXUI.jar with this command " java -jar FXUI.jar " the UI program starts.
