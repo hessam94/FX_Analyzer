@@ -1,0 +1,4 @@
+{xP == x + 1, {x, xP, "int"}, x <= xP}
+{xP == x + 5, {x, xP, "int"}, x <= xP}
+{xP == x - 1, {x, xP, "int"}, x >= xP}
+{xP == x, {x, xP, "int"}, xP == x}

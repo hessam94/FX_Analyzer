@@ -12,13 +12,9 @@ public class Main
 	{
 
 		int k, i , j,y;
-		while (j != i)
+		while (j < i)
 			{
-			// must be same as j = j +k;
-				for (int m=1;m<=k;m = m+1)
-				{
-					j = j+1;
-				}
+				j=j+k;
                 k=k-1;
                 j=j-k;
                 y=f(y);

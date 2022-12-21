@@ -1,0 +1,7 @@
+k >= Quantifier`LocalVariable$1127
+ && Quantifier`LocalVariable$1128 == i
+ && j <= Quantifier`LocalVariable$1129
+ && j + k == Quantifier`LocalVariable$1127 + Quantifier`LocalVariable$1129
+ && 7^k*(-7 - 6*y) == 7^Quantifier`LocalVariable$1127*
+  (-7 - 6*Quantifier`LocalVariable$1130)
+ &&  Not[ Quantifier`LocalVariable$1129 < Quantifier`LocalVariable$1128 ] 
