@@ -1,51 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Fx">
-  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="1000" height="700"/>
+      <xy x="20" y="20" width="1500" height="1000"/>
     </constraints>
     <properties>
-      <minimumSize width="700" height="400"/>
-      <preferredSize width="700" height="400"/>
+      <minimumSize width="1200" height="800"/>
+      <preferredSize width="1200" height="800"/>
     </properties>
     <border type="none"/>
     <children>
-      <component id="3ade4" class="javax.swing.JTextArea" binding="Math_tx">
+      <component id="bbad9" class="javax.swing.JButton" binding="bt_loadoutput">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="50"/>
-          </grid>
-        </constraints>
-        <properties>
-          <font size="28"/>
-          <wrapStyleWord value="true"/>
-        </properties>
-      </component>
-      <component id="bbad9" class="javax.swing.JButton" binding="loadoutput_bt">
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Show Output"/>
         </properties>
       </component>
-      <component id="b327a" class="javax.swing.JButton" binding="clear_bt">
+      <component id="b327a" class="javax.swing.JButton" binding="bt_clear">
         <constraints>
-          <grid row="1" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Clear"/>
         </properties>
       </component>
-      <component id="d74e8" class="javax.swing.JButton" binding="run_bt">
+      <component id="d74e8" class="javax.swing.JButton" binding="bt_run">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Run"/>
         </properties>
       </component>
+      <scrollpane id="a17fd">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="-1" height="200"/>
+            <preferred-size width="-1" height="200"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="3ade4" class="javax.swing.JTextArea" binding="tx_Math">
+            <constraints/>
+            <properties>
+              <background color="-2097200"/>
+              <font size="28"/>
+              <lineWrap value="true"/>
+              <text value=""/>
+              <wrapStyleWord value="true"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <scrollpane id="f3d2e">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="332bd" class="javax.swing.JTextArea" binding="tx_source">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
     </children>
   </grid>
 </form>

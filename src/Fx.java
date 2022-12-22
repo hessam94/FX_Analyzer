@@ -1,21 +1,17 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
 import java.io.*;
 import java.util.Scanner;
 
 public class Fx
 {
-    private JButton mathFile_bt;
     public JPanel panel1;
-    private JButton code_bt;
-    private JTextArea Code_tx;
-    private JTextArea Math_tx;
-    private JButton run_bt;
-    private JButton clear_bt;
-    private JButton loadoutput_bt;
+    private JTextArea tx_Math;
+    private JButton bt_run;
+    private JButton bt_clear;
+    private JButton bt_loadoutput;
+    private JTextArea tx_source;
     private JFileChooser fileChooser;
     private String MathExePath;
 
@@ -61,7 +57,7 @@ public class Fx
 //                }
 //            }
 //        });
-        clear_bt.addActionListener(new ActionListener()
+        bt_clear.addActionListener(new ActionListener()
         {
             @Override
             public void actionPerformed(ActionEvent e)
@@ -75,17 +71,18 @@ public class Fx
                 }
             }
         });
-        run_bt.addActionListener(new ActionListener()
+        bt_run.addActionListener(new ActionListener()
         {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                run_bt.setVisible(false);
-                loadoutput_bt.setVisible(true);
+                bt_run.setVisible(false);
+                bt_loadoutput.setVisible(true);
                 // Run a java app in a separate system process
                 Process proc = null;
                 try
                 {
+                    SaveFile(tx_source.getText() , "sourceTest.txt");
                     proc = Runtime.getRuntime().exec("cmd /c start \"\" java -jar javaparser-core.jar  sourceTest.txt " + MathExePath );
 
                     proc.waitFor();
@@ -100,21 +97,21 @@ public class Fx
 
             }
         });
-        loadoutput_bt.addActionListener(new ActionListener()
+        bt_loadoutput.addActionListener(new ActionListener()
         {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                Math_tx.setText(null);
+                tx_Math.setText(null);
                 //code_bt.setVisible(false);
                 //mathFile_bt.setVisible(false);
-                run_bt.setVisible(false);
-                loadoutput_bt.setVisible(true);
+                bt_run.setVisible(false);
+                bt_loadoutput.setVisible(true);
 
-                Math_tx.setLineWrap(true);
+                tx_Math.setLineWrap(true);
                 fileChooser = new JFileChooser();
-                String readme = System.getProperty("user.dir");
-                File file = new File(readme + "\\function.txt");
+                String dir = System.getProperty("user.dir");
+                File file = new File(dir + "\\function.txt");
                 Scanner sc = null;
                 try
                 {
@@ -125,25 +122,53 @@ public class Fx
                 }
 
                 while (sc.hasNextLine())
-                    Math_tx.append(sc.nextLine() + "\n");
+                    tx_Math.append(sc.nextLine() + "\n");
+                sc.close();
 
             }
         });
     }
     public void initUI() throws FileNotFoundException
     {
-        //Code_tx.setText(null);
-        //code_bt.setVisible(false);
-        //mathFile_bt.setVisible(true);
-        run_bt.setVisible(true);
-        loadoutput_bt.setVisible(false);
+        tx_source.setText("");
+        tx_Math.setText("");
+        bt_run.setVisible(true);
+        bt_loadoutput.setVisible(false);
        fileChooser = new JFileChooser();
-        String readme = System.getProperty("user.dir");
-        File file = new File(readme + "\\config.txt");
+        String dir = System.getProperty("user.dir");
+//        File myObj = new File(dir+ "\\function.txt");
+//        if (myObj.exists())
+//            myObj.delete();
+
+        File file = new File(dir + "\\config.txt");
         Scanner sc = new Scanner(file);
         MathExePath = sc.nextLine();
 
+        sc.close();
+        file = new File(dir + "\\sourceTest.txt");
+        sc = null;
+        try
+        {
+            sc = new Scanner(file);
+        } catch (FileNotFoundException fileNotFoundException)
+        {
+            fileNotFoundException.printStackTrace();
+        }
+
+        while (sc.hasNextLine())
+            tx_source.append(sc.nextLine() + "\n");
+        sc.close();
     }
+
+    public void SaveFile(String text, String fileName) throws IOException
+    {
+        String dir = System.getProperty("user.dir");
+        BufferedWriter writer = new BufferedWriter(new FileWriter(dir +"\\" +fileName));
+        writer.write(text);
+        writer.close();
+
+    }
+
 
 
 }

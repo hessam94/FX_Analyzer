@@ -14,8 +14,8 @@ public class Main
 		int k, i , j,y;
 		while (j != i)
 			{
-			// must be same as j = j +k;
-				for (int m=1;m<=k;m = m+1)
+			
+				for (int m=1;m <= k;m = m+1)
 				{
 					j = j+1;
 				}
@@ -23,7 +23,7 @@ public class Main
                 j=j-k;
                 y=f(y);
 			}
-		j = i +6;
+		j = i +8;
 		k = i - j;
 
 
