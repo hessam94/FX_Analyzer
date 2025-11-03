@@ -1,5 +1,9 @@
 # FX_Analyzer
 
+
+https://github.com/user-attachments/assets/067eedbf-2b20-4038-b67d-07887f0de1b5
+
+
 Instruction to use the tool  
 1- to run this program you need to install the Mathematica software on your computer.  
 2- copy all files from MathPackage and paste it into the ~\mathematica\AddOns\Packages. ~\mathematica is the directory that I installed Wolfram Mathematica software. 
